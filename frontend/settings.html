@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>InShort - Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+    <li class="nav-item"><a class="nav-link" id="logoutLink" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+  </ul>
+</nav>
+
+<div class="content-wrapper p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i class="fas fa-cog"></i> Settings</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+                <form id="settingsForm">
+                  <div class="form-group">
+                    <label for="profilePhoto">Profile Photo</label>
+                    <div class="profile-photo-section">
+                      <div class="current-photo mb-3">
+                        <img src="" alt="Current Profile" class="current-profile-photo" id="currentProfilePhoto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #667eea;">
+                        <div class="mt-2">
+                          <input type="file" id="profilePhotoInput" accept="image/*" style="display: none;">
+                          <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('profilePhotoInput').click()">
+                            <i class="fas fa-camera"></i> Change Photo
+                          </button>
+                          <button type="button" class="btn btn-outline-danger btn-sm ml-2" id="removePhotoBtn" style="display: none;">
+                            <i class="fas fa-trash"></i> Remove
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <small class="form-text text-muted">Upload a profile photo or use the default avatar with your initial.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="nickname">Display Name (Nickname)</label>
+                    <input type="text" class="form-control" id="nickname" placeholder="Enter your preferred display name">
+                    <small class="form-text text-muted">This will be shown instead of your username in the interface.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="currentUsername">Current Username</label>
+                    <input type="text" class="form-control" id="currentUsername" readonly>
+                    <small class="form-text text-muted">Your login username (cannot be changed).</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" id="role" readonly>
+                    <small class="form-text text-muted">Your account role.</small>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Settings
+                  </button>
+                </form>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h5><i class="fas fa-info-circle"></i> About Settings</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li class="mb-2"><i class="fas fa-user text-primary"></i> <strong>Display Name:</strong> Choose how you want to be called</li>
+                      <li class="mb-2"><i class="fas fa-shield-alt text-success"></i> <strong>Username:</strong> Your login identifier</li>
+                      <li class="mb-2"><i class="fas fa-tag text-info"></i> <strong>Role:</strong> Your account permissions</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="card mt-3">
+                  <div class="card-header">
+                    <h5><i class="fas fa-graduation-cap"></i> Quick Actions</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-grid gap-2">
+                      <a href="syllabus.html" class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-book"></i> Setup Syllabus
+                      </a>
+                      <a href="materials.html" class="btn btn-outline-info btn-sm">
+                        <i class="fas fa-upload"></i> Upload Materials
+                      </a>
+                      <a href="ai-chat.html" class="btn btn-outline-success btn-sm">
+                        <i class="fas fa-robot"></i> AI Assistant
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

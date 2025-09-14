@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>InShort - Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+    <li class="nav-item"><a class="nav-link" id="logoutLink" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+  </ul>
+</nav>
+
+<div class="content-wrapper p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="mb-0"><i class="fas fa-shield-alt"></i> Admin Panel</h3>
+          </div>
+          <div class="card-body">
+            <!-- Emergency Lock Section -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="fas fa-lock"></i> Emergency Lock</h5>
+                  </div>
+                  <div class="card-body">
+                    <div id="lockStatus" class="alert alert-info">
+                      <i class="fas fa-info-circle"></i> Checking system status...
+                    </div>
+                    
+                    <form id="emergencyLockForm">
+                      <div class="form-group">
+                        <label for="lockReason">Lock Reason</label>
+                        <textarea class="form-control" id="lockReason" rows="3" placeholder="Enter reason for emergency lock..."></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-danger" id="lockBtn">
+                        <i class="fas fa-lock"></i> Activate Emergency Lock
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-unlock"></i> System Control</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <h6>System Statistics</h6>
+                      <div class="row text-center">
+                        <div class="col-4">
+                          <div class="stat-box">
+                            <h4 class="text-primary" id="totalUsers">0</h4>
+                            <small>Total Users</small>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="stat-box">
+                            <h4 class="text-success" id="activeUsers">0</h4>
+                            <small>Active Users</small>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="stat-box">
+                            <h4 class="text-info" id="totalFiles">0</h4>
+                            <small>Files Uploaded</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <button class="btn btn-success btn-block" id="unlockBtn" disabled>
+                      <i class="fas fa-unlock"></i> Deactivate Emergency Lock
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Management -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-users"></i> User Management</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Level</th>
+                            <th>XP</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="usersTable">
+                          <!-- Users will be loaded here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
+
